@@ -1,24 +1,25 @@
-# Compiled class file
-*.class
+backend/taget/**
 
-# Log file
-*.log
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
-# BlueJ files
-*.ctxt
+# dependencies
+frontend/node_modules
+frontend/.pnp
+frontend/.pnp.js
 
-# Mobile Tools for Java (J2ME)
-.mtj.tmp/
+# testing
+frontend/coverage
 
-# Package Files #
-*.jar
-*.war
-*.nar
-*.ear
-*.zip
-*.tar.gz
-*.rar
+# production
+frontend/build
 
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
-hs_err_pid*
-replay_pid*
+# misc
+frontend/.DS_Store
+frontend/.env.local
+frontend/.env.development.local
+frontend/.env.test.local
+frontend/.env.production.local
+
+frontend/npm-debug.log*
+frontend/yarn-debug.log*
+frontend/yarn-error.log*
