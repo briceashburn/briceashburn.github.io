@@ -3,27 +3,66 @@ body {
   height: 100vh;
   justify-content: center;
   align-items: center;
-  background: #f0f0f0;
+  background: linear-gradient(135deg, #f0f0f0 0%, #c0e0fc 100%);
   font-family: Arial, sans-serif;
 }
-#hello {
-  padding: 2rem 3rem;
-  background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  font-size: 2rem;
+
+.fancy-card {
+  padding: 2.5rem 4rem;
+  background: rgba(255,255,255,0.95);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+  font-size: 2.2rem;
   color: #333;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.2s;
 }
-button {
-  margin-top: 1rem;
-  padding: 0.5rem 1rem;
-  font-size: 1rem;
+.fancy-card:hover {
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.22);
+}
+
+.hello-text {
+  font-size: 2.5rem;
+  color: #0078d7;
+  letter-spacing: 2px;
+  display: inline-block;
+  margin-left: 0.5rem;
+}
+
+.wave {
+  font-size: 2.5rem;
+  animation: wave-hand 1.5s infinite;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+@keyframes wave-hand {
+  0% { transform: rotate(0deg);}
+  10% { transform: rotate(14deg);}
+  20% { transform: rotate(-8deg);}
+  30% { transform: rotate(14deg);}
+  40% { transform: rotate(-4deg);}
+  50% { transform: rotate(10deg);}
+  60% { transform: rotate(0deg);}
+  100% { transform: rotate(0deg);}
+}
+
+.fancy-btn {
+  margin-top: 1.5rem;
+  padding: 0.7rem 2rem;
+  font-size: 1.2rem;
   border: none;
-  border-radius: 4px;
-  background: #0078d7;
+  border-radius: 24px;
+  background: linear-gradient(90deg, #0078d7 0%, #00c6fb 100%);
   color: #fff;
   cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,120,215,0.15);
+  transition: background 0.3s, transform 0.2s;
 }
-button:hover {
-  background: #005fa3;
+.fancy-btn:hover {
+  background: linear-gradient(90deg, #005fa3 0%, #00a6d7 100%);
+  transform: scale(1.07);
 }
