@@ -4,8 +4,8 @@
   "description": "Portfolio website of Brice Ashburn, Software Engineer at General Motors",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#0f172a",
-  "theme_color": "#10b981",
+  "background_color": "#0a0a0a",
+  "theme_color": "#0a0a0a",
   "orientation": "portrait-primary",
   "icons": [
     {

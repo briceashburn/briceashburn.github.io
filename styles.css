@@ -70,6 +70,16 @@ body {
   background-color: var(--bg-primary);
   overflow-x: hidden;               /* Prevent horizontal scroll */
   scroll-behavior: smooth;          /* Smooth anchor scrolling */
+  
+  /* iOS specific fixes for status bar */
+  appearance: none;
+  -webkit-appearance: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Ensure consistent background for viewport on iOS */
+html {
+  background-color: var(--bg-primary);
 }
 
 /* ============================================
@@ -119,6 +129,9 @@ body {
   border-bottom: 1px solid var(--border-subtle);
   z-index: 1000;
   transition: all 0.3s ease;
+  
+  /* iOS safe area support */
+  padding-top: env(safe-area-inset-top);
 }
 
 .nav-container {
