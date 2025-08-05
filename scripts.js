@@ -32,70 +32,24 @@ function throttle(func, wait) {
 
 /**
  * Mobile Navigation Toggle Functionality
- * Handles hamburger menu open/close with enhanced animations and accessibility
+ * Handles hamburger menu open/close
  */
 function initMobileNavigation() {
   const navToggle = document.getElementById('nav-toggle');
   const navMenu = document.getElementById('nav-menu');
-  const navBackdrop = document.getElementById('nav-backdrop');
 
-  if (!navToggle || !navMenu || !navBackdrop) return;
-
-  // Add ARIA attributes for accessibility
-  navToggle.setAttribute('aria-label', 'Toggle navigation menu');
-  navToggle.setAttribute('aria-expanded', 'false');
-  navToggle.setAttribute('aria-controls', 'nav-menu');
-
-  function closeMenu() {
-    navMenu.classList.remove('active');
-    navToggle.classList.remove('active');
-    navBackdrop.classList.remove('active');
-    navToggle.setAttribute('aria-expanded', 'false');
-    navToggle.setAttribute('aria-label', 'Open navigation menu');
-    document.body.style.overflow = '';
-  }
-
-  function openMenu() {
-    navMenu.classList.add('active');
-    navToggle.classList.add('active');
-    navBackdrop.classList.add('active');
-    navToggle.setAttribute('aria-expanded', 'true');
-    navToggle.setAttribute('aria-label', 'Close navigation menu');
-    document.body.style.overflow = 'hidden';
-  }
+  if (!navToggle || !navMenu) return;
 
   // Toggle mobile menu on hamburger click
   navToggle.addEventListener('click', () => {
-    const isActive = navMenu.classList.contains('active');
-    
-    if (isActive) {
-      closeMenu();
-    } else {
-      openMenu();
-    }
+    navMenu.classList.toggle('active');
   });
 
   // Auto-close mobile menu when user clicks on navigation links
   document.querySelectorAll('.nav-link').forEach(link => {
-    link.addEventListener('click', closeMenu);
-  });
-
-  // Close menu when clicking on backdrop
-  navBackdrop.addEventListener('click', closeMenu);
-
-  // Close menu on escape key press
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && navMenu.classList.contains('active')) {
-      closeMenu();
-      navToggle.focus(); // Return focus to toggle button
-    }
-  });
-
-  // Handle window resize - close menu if switching to desktop view
-  window.addEventListener('resize', () => {
-    if (window.innerWidth > 768 && navMenu.classList.contains('active')) {
-      closeMenu();
-    }
+    link.addEventListener('click', () => {
+      navMenu.classList.remove('active');
+    });
   });
 }
 
