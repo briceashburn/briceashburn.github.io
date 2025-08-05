@@ -1,0 +1,39 @@
+# ============================================
+# .gitignore for GitHub Pages Portfolio
+# ============================================
+
+# Operating System Files
+.DS_Store
+.DS_Store?
+._*
+Thumbs.db
+Desktop.ini
+
+# Editor Files
+.vscode/
+.idea/
+*.sublime-*
+*.swp
+*.swo
+
+# Development Files
+node_modules/
+.env
+.env.*
+*.log
+
+# Build and Cache
+dist/
+build/
+.cache/
+*.css.map
+*.js.map
+
+# Backup Files
+*.bak
+*.backup
+*.old
+
+# Jekyll (GitHub Pages)
+_site/
+.jekyll-cache/
