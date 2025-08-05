@@ -167,19 +167,66 @@ body {
 .nav-toggle {
   display: none;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   cursor: pointer;
   background: none;
   border: none;
-  padding: 4px;
+  padding: 8px;
+  width: 44px;  /* Minimum touch target size */
+  height: 44px; /* Minimum touch target size */
+  border-radius: var(--border-radius);
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.nav-toggle:hover {
+  background: var(--glass-bg);
+  backdrop-filter: var(--backdrop-blur);
+}
+
+.nav-toggle:focus {
+  outline: 2px solid var(--accent-primary);
+  outline-offset: 2px;
 }
 
 .bar {
-  width: 25px;
-  height: 3px;
+  width: 22px;
+  height: 2px;
   background: var(--text-primary);
-  margin: 3px 0;
-  transition: all 0.3s ease;
   border-radius: 2px;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  transform-origin: center;
+  position: absolute;
+}
+
+.bar:nth-child(1) {
+  top: 50%;
+  transform: translateY(-6px);
+}
+
+.bar:nth-child(2) {
+  top: 50%;
+  transform: translateY(-1px);
+}
+
+.bar:nth-child(3) {
+  top: 50%;
+  transform: translateY(4px);
+}
+
+/* Active state - hamburger transforms to X */
+.nav-toggle.active .bar:nth-child(1) {
+  transform: translateY(-1px) rotate(45deg);
+}
+
+.nav-toggle.active .bar:nth-child(2) {
+  opacity: 0;
+  transform: translateY(-1px) scale(0);
+}
+
+.nav-toggle.active .bar:nth-child(3) {
+  transform: translateY(-1px) rotate(-45deg);
 }
 
 /* Hero Section */
@@ -562,10 +609,36 @@ section {
   padding: 2rem 0;
 }
 
+/* Mobile menu backdrop overlay */
+.nav-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 998;
+  display: none; /* Hidden on desktop */
+}
+
+.nav-backdrop.active {
+  opacity: 1;
+  visibility: visible;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
   .nav-right {
     gap: 0.5rem;
+  }
+
+  /* Show backdrop on mobile */
+  .nav-backdrop {
+    display: block;
   }
 
   .nav-menu {
@@ -577,12 +650,13 @@ section {
     border: 1px solid var(--border-subtle);
     width: 100%;
     text-align: center;
-    transition: 0.3s;
+    transition: left 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
-    padding: 2rem 0;
+    padding: 1.5rem 0;
     backdrop-filter: var(--backdrop-blur);
     max-height: calc(100vh - 70px);
     overflow-y: auto;
+    z-index: 999;
   }
 
   .nav-menu.active {
@@ -590,15 +664,40 @@ section {
   }
 
   .nav-menu .nav-link {
-    padding: 1rem 0;
+    padding: 1.2rem 2rem;
     border-bottom: 1px solid var(--border-subtle);
     display: block;
     transition: all 0.3s ease;
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin: 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .nav-menu .nav-link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, var(--glass-bg), transparent);
+    transition: left 0.5s ease;
+  }
+
+  .nav-menu .nav-link:hover::before {
+    left: 100%;
   }
 
   .nav-menu .nav-link:hover {
     background: var(--glass-bg);
     color: var(--accent-primary);
+    transform: translateX(8px);
+  }
+
+  .nav-menu .nav-link:active {
+    transform: translateX(4px) scale(0.98);
   }
 
   .nav-menu .nav-link:last-child {
