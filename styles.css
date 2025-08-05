@@ -11,12 +11,12 @@
 :root {
   /* Color Palette - Dark Theme */
   --bg-primary: #0f172a;           /* Main background - slate-900 */
-  --bg-secondary: #1e293b;         /* Section backgrounds - slate-800 */
+  --bg-secondary: #1e293b;         /* Section/card backgrounds - slate-800 */
   --bg-navbar: rgba(15, 23, 42, 0.95);      /* Navbar with transparency */
+  --bg-footer: #1f2937;            /* Footer background - gray-800 */
   --text-primary: #f1f5f9;         /* Main text - slate-100 */
   --text-secondary: #cbd5e1;       /* Secondary text - slate-300 */
   --text-white: #ffffff;           /* Pure white text */
-  --card-bg: #1e293b;              /* Card backgrounds - slate-800 */
   --shadow: rgba(0, 0, 0, 0.3);    /* Standard shadow */
   --shadow-hover: rgba(0, 0, 0, 0.4); /* Hover shadow */
   
@@ -25,6 +25,7 @@
   --accent-hover: #059669;         /* Hover state - emerald-600 */
   
   /* Layout Spacing */
+  --max-width: 1200px;             /* Maximum content width */
   --section-padding: 80px;         /* Standard section padding */
   --container-padding: 20px;       /* Container side padding */
   --border-radius: 8px;            /* Standard border radius */
@@ -83,7 +84,7 @@ body {
 
 /* Main content container with responsive padding */
 .container {
-  max-width: 1200px;              /* Max content width */
+  max-width: var(--max-width);     /* Max content width */
   margin: 0 auto;                 /* Center container */
   padding: 0 var(--container-padding);
 }
@@ -104,7 +105,7 @@ body {
 }
 
 .nav-container {
-  max-width: 1200px;
+  max-width: var(--max-width);
   margin: 0 auto;
   padding: 1rem var(--container-padding);
   display: flex;
@@ -174,7 +175,7 @@ body {
 }
 
 .hero-container {
-  max-width: 1200px;
+  max-width: var(--max-width);
   margin: 0 auto;
   padding: 0 var(--container-padding);
   text-align: center;
@@ -281,7 +282,7 @@ section {
 .stat {
   text-align: center;
   padding: 1rem;
-  background: var(--card-bg);
+  background: var(--bg-secondary);
   border-radius: var(--border-radius);
   box-shadow: 0 4px 6px var(--shadow);
   transition: all 0.3s ease;
@@ -308,7 +309,7 @@ section {
 }
 
 .skill-card {
-  background: var(--card-bg);
+  background: var(--bg-secondary);
   padding: 2rem;
   border-radius: var(--border-radius);
   box-shadow: 0 4px 6px var(--shadow);
@@ -381,7 +382,7 @@ section {
 }
 
 .project-card {
-  background: var(--card-bg);
+  background: var(--bg-secondary);
   border-radius: var(--border-radius);
   overflow: hidden;
   box-shadow: 0 4px 6px var(--shadow);
@@ -475,7 +476,7 @@ section {
 
 /* Footer */
 .footer {
-  background: #1f2937;
+  background: var(--bg-footer);
   color: var(--text-white);
   text-align: center;
   padding: 2rem 0;
