@@ -13,9 +13,9 @@
   --bg-primary: #0f172a;           /* Main background - slate-900 */
   --bg-secondary: #1e293b;         /* Section backgrounds - slate-800 */
   --bg-navbar: rgba(15, 23, 42, 0.95);      /* Navbar with transparency */
-  --bg-navbar-scroll: rgba(15, 23, 42, 0.98); /* Navbar when scrolled */
   --text-primary: #f1f5f9;         /* Main text - slate-100 */
   --text-secondary: #cbd5e1;       /* Secondary text - slate-300 */
+  --text-white: #ffffff;           /* Pure white text */
   --card-bg: #1e293b;              /* Card backgrounds - slate-800 */
   --shadow: rgba(0, 0, 0, 0.3);    /* Standard shadow */
   --shadow-hover: rgba(0, 0, 0, 0.4); /* Hover shadow */
@@ -169,7 +169,7 @@ body {
   display: flex;
   align-items: center;
   background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
-  color: white;
+  color: var(--text-white);
   padding-top: 80px;
 }
 
@@ -222,7 +222,7 @@ body {
 
 .btn-primary {
   background: var(--accent-primary);
-  color: white;
+  color: var(--text-white);
 }
 
 .btn-primary:hover {
@@ -232,12 +232,12 @@ body {
 
 .btn-secondary {
   background: transparent;
-  color: white;
-  border: 2px solid white;
+  color: var(--text-white);
+  border: 2px solid var(--text-white);
 }
 
 .btn-secondary:hover {
-  background: white;
+  background: var(--text-white);
   color: var(--accent-primary);
 }
 
@@ -400,7 +400,7 @@ section {
   align-items: center;
   justify-content: center;
   font-size: 3rem;
-  color: white;
+  color: var(--text-white);
 }
 
 .project-content {
@@ -476,7 +476,7 @@ section {
 /* Footer */
 .footer {
   background: #1f2937;
-  color: white;
+  color: var(--text-white);
   text-align: center;
   padding: 2rem 0;
 }
@@ -499,10 +499,22 @@ section {
     box-shadow: 0 10px 27px var(--shadow);
     padding: 2rem 0;
     backdrop-filter: blur(10px);
+    max-height: calc(100vh - 70px);
+    overflow-y: auto;
   }
 
   .nav-menu.active {
     left: 0;
+  }
+
+  .nav-menu .nav-link {
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    display: block;
+  }
+
+  .nav-menu .nav-link:last-child {
+    border-bottom: none;
   }
 
   .nav-toggle {
@@ -561,4 +573,17 @@ section {
     width: 100%;
     text-align: center;
   }
+}
+
+/* ============================================
+   UTILITY CLASSES
+   ============================================ */
+
+.lazy {
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.lazy.loaded {
+  opacity: 1;
 }

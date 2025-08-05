@@ -15,18 +15,58 @@
   <meta property="og:description" content="Software Engineer at General Motors specializing in Java, Python, and modern web technologies. Based in Austin, TX.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://briceashburn.github.io">
+  <meta property="og:image" content="https://briceashburn.github.io/og-image.jpg">
+  <meta property="og:locale" content="en_US">
   
   <!-- Twitter Card Meta Tags for Twitter Sharing -->
-  <meta name="twitter:card" content="summary">
+  <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Brice Ashburn - Software Engineer">
   <meta name="twitter:description" content="Software Engineer at General Motors specializing in Java, Python, and modern web technologies.">
+  <meta name="twitter:image" content="https://briceashburn.github.io/og-image.jpg">
+  
+  <!-- Additional SEO Meta Tags -->
+  <link rel="canonical" href="https://briceashburn.github.io">
+  
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Brice Ashburn",
+    "jobTitle": "Software Engineer",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "General Motors"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Austin",
+      "addressRegion": "TX",
+      "addressCountry": "US"
+    },
+    "email": "briceashburn@hotmail.com",
+    "url": "https://briceashburn.github.io",
+    "sameAs": [
+      "https://www.linkedin.com/in/brice-ashburn/",
+      "https://github.com/briceashburn"
+    ],
+    "knowsAbout": ["Java", "Python", "JavaScript", "React", "Azure", "CI/CD", "Terraform"]
+  }
+  </script>
   
   <!-- Page Title and Assets -->
   <title>Brice Ashburn - Software Engineer</title>
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="manifest" href="manifest.json">
+  
+  <!-- Resource Hints for Performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+  
   <link rel="stylesheet" href="styles.css">
   
-  <!-- External Fonts and Icons -->
+  <!-- External Fonts and Icons with optimized loading -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer">
 </head>
@@ -36,7 +76,7 @@
     <div class="nav-container">
       <!-- Logo/Brand -->
       <div class="nav-logo">
-        <a href="#home" aria-label="Brice Ashburn - Home">Brice Ashburn</a>
+        <a href="#home">Brice Ashburn</a>
       </div>
       
       <!-- Navigation Menu and Controls -->
@@ -52,10 +92,10 @@
         
         <!-- Mobile Menu Toggle Button -->
         <div class="nav-controls">
-          <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
-            <span class="bar" aria-hidden="true"></span>
-            <span class="bar" aria-hidden="true"></span>
-            <span class="bar" aria-hidden="true"></span>
+          <button class="nav-toggle" id="nav-toggle">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
           </button>
         </div>
       </div>
@@ -101,7 +141,7 @@
         </div>
         
         <!-- Professional Statistics Cards -->
-        <aside class="about-stats" aria-label="Professional statistics">
+        <aside class="about-stats">
           <div class="stat">
             <h3>10+</h3>
             <p>GitHub Repositories</p>
@@ -128,46 +168,46 @@
       <div class="skills-grid">
         <!-- Programming Languages -->
         <article class="skill-card java">
-          <i class="fab fa-java" aria-hidden="true"></i>
+          <i class="fab fa-java"></i>
           <h3>Java</h3>
           <p>Object-oriented programming and enterprise applications</p>
         </article>
         <article class="skill-card python">
-          <i class="fab fa-python" aria-hidden="true"></i>
+          <i class="fab fa-python"></i>
           <h3>Python</h3>
           <p>Data analysis, automation, and web development</p>
         </article>
         <article class="skill-card javascript">
-          <i class="fab fa-js-square" aria-hidden="true"></i>
+          <i class="fab fa-js-square"></i>
           <h3>JavaScript</h3>
           <p>Modern ES6+, TypeScript, and web frameworks</p>
         </article>
         
         <!-- Frameworks & Libraries -->
         <article class="skill-card react">
-          <i class="fab fa-react" aria-hidden="true"></i>
+          <i class="fab fa-react"></i>
           <h3>React</h3>
           <p>Component-based UI development and modern web apps</p>
         </article>
         <article class="skill-card web">
-          <i class="fab fa-css3-alt" aria-hidden="true"></i>
+          <i class="fab fa-css3-alt"></i>
           <h3>Web Technologies</h3>
           <p>HTML5, CSS3, responsive design and animations</p>
         </article>
         
         <!-- Cloud & DevOps -->
         <article class="skill-card azure">
-          <i class="fab fa-microsoft" aria-hidden="true"></i>
+          <i class="fab fa-microsoft"></i>
           <h3>Azure</h3>
           <p>Cloud computing, Azure DevOps, and cloud architecture</p>
         </article>
         <article class="skill-card cicd">
-          <i class="fas fa-cogs" aria-hidden="true"></i>
+          <i class="fas fa-cogs"></i>
           <h3>CI/CD</h3>
           <p>Continuous integration and deployment pipelines</p>
         </article>
         <article class="skill-card terraform">
-          <i class="fas fa-layer-group" aria-hidden="true"></i>
+          <i class="fas fa-layer-group"></i>
           <h3>Terraform</h3>
           <p>Infrastructure as Code and cloud resource management</p>
         </article>
@@ -185,15 +225,15 @@
         <!-- Java Game Project -->
         <article class="project-card">
           <div class="project-placeholder">
-            <i class="fas fa-space-shuttle" aria-hidden="true"></i>
+            <i class="fas fa-space-shuttle"></i>
           </div>
           <div class="project-content">
             <h3>Space Invaders Game</h3>
             <p>A classic arcade-style game built in Java featuring smooth gameplay mechanics and retro graphics.</p>
             <div class="project-links">
-              <a href="https://github.com/briceashburn/Space-Invaders" class="project-link" target="_blank" rel="noopener noreferrer" aria-label="View Space Invaders Game source code on GitHub">
-              <i class="fab fa-github" aria-hidden="true"></i> View Code
-            </a>
+              <a href="https://github.com/briceashburn/Space-Invaders" class="project-link" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-github"></i> View Code
+              </a>
             </div>
           </div>
         </article>
@@ -201,15 +241,15 @@
         <!-- Python API Project -->
         <article class="project-card">
           <div class="project-placeholder">
-            <i class="fas fa-code" aria-hidden="true"></i>
+            <i class="fas fa-code"></i>
           </div>
           <div class="project-content">
             <h3>FastAPI Starter Template</h3>
             <p>A clean, modern FastAPI starter template with PostgreSQL connectivity, middleware, and interactive API documentation.</p>
             <div class="project-links">
-              <a href="https://github.com/briceashburn/weather-app" class="project-link" target="_blank" rel="noopener noreferrer" aria-label="View FastAPI Starter Template source code on GitHub">
-              <i class="fab fa-github" aria-hidden="true"></i> View Code
-            </a>
+              <a href="https://github.com/briceashburn/weather-app" class="project-link" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-github"></i> View Code
+              </a>
             </div>
           </div>
         </article>
@@ -217,15 +257,15 @@
         <!-- Full-Stack Web App -->
         <article class="project-card">
           <div class="project-placeholder">
-            <i class="fas fa-tasks" aria-hidden="true"></i>
+            <i class="fas fa-tasks"></i>
           </div>
           <div class="project-content">
             <h3>Todo Application</h3>
             <p>A task management application built in Java with features for organizing and tracking daily tasks.</p>
             <div class="project-links">
-              <a href="https://github.com/briceashburn/todo-app" class="project-link" target="_blank" rel="noopener noreferrer" aria-label="View Todo Application source code on GitHub">
-              <i class="fab fa-github" aria-hidden="true"></i> View Code
-            </a>
+              <a href="https://github.com/briceashburn/todo-app" class="project-link" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-github"></i> View Code
+              </a>
             </div>
           </div>
         </article>
@@ -246,20 +286,20 @@
           <!-- Contact Methods -->
           <div class="contact-methods">
             <!-- Email Contact -->
-            <a href="mailto:briceashburn@hotmail.com" class="contact-method" aria-label="Email Brice Ashburn">
-              <i class="fas fa-envelope" aria-hidden="true"></i>
+            <a href="mailto:briceashburn@hotmail.com" class="contact-method">
+              <i class="fas fa-envelope"></i>
               <span>briceashburn@hotmail.com</span>
             </a>
             
             <!-- LinkedIn Profile -->
-            <a href="https://www.linkedin.com/in/brice-ashburn/" class="contact-method" target="_blank" rel="noopener noreferrer" aria-label="Visit Brice Ashburn's LinkedIn profile">
-              <i class="fab fa-linkedin" aria-hidden="true"></i>
+            <a href="https://www.linkedin.com/in/brice-ashburn/" class="contact-method" target="_blank" rel="noopener noreferrer">
+              <i class="fab fa-linkedin"></i>
               <span>LinkedIn</span>
             </a>
             
             <!-- GitHub Profile -->
-            <a href="https://github.com/briceashburn" class="contact-method" target="_blank" rel="noopener noreferrer" aria-label="Visit Brice Ashburn's GitHub profile">
-              <i class="fab fa-github" aria-hidden="true"></i>
+            <a href="https://github.com/briceashburn" class="contact-method" target="_blank" rel="noopener noreferrer">
+              <i class="fab fa-github"></i>
               <span>GitHub</span>
             </a>
           </div>
@@ -277,6 +317,6 @@
   </footer>
 
   <!-- JavaScript for Interactivity -->
-  <script src="scripts.js"></script>
+  <script src="scripts.js" defer></script>
 </body>
 </html>

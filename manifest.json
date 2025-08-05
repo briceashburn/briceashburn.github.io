@@ -1,0 +1,18 @@
+{
+  "name": "Brice Ashburn - Software Engineer",
+  "short_name": "Brice Ashburn",
+  "description": "Portfolio website of Brice Ashburn, Software Engineer at General Motors",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0f172a",
+  "theme_color": "#10b981",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
