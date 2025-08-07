@@ -50,4 +50,4 @@ jobs:
       - name: Publish to GitHub Pages 🚀
         uses: actions/deploy-pages@v4
         with:
-          artifact-name: next-build
+          artifact_name: next-build
